@@ -70,6 +70,7 @@ export default function App() {
         </TouchableOpacity>
       </View>
       <ScrollView
+        showsVerticalScrollIndicator={false}
         ref={scroll}
         style={styles.scrollView}
         onScrollEndDrag={(e) => {
@@ -98,7 +99,7 @@ export default function App() {
               onPress={() => {
                 setMirrored((old) => !old);
                 setIsModalVisible((old) => !old);
-                if(script!==editedScript){
+                if (script !== editedScript) {
                   setScript(editedScript);
                 }
               }}
@@ -171,5 +172,12 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   done: { alignItems: "flex-end", width: "100%" },
-  textInput:{ borderColor: "gray", borderWidth:1, borderRadius: 10, padding: 20, minHeight:200, fontSize: 20 }
+  textInput: {
+    borderColor: "gray",
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 20,
+    minHeight: 200,
+    fontSize: 20,
+  },
 });
